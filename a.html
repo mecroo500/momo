@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#FFD700">
+    <title>ﬂ«“Ì‰Ê »·Ì‰ﬂÊ «·–Â»Ì</title>
+    <link rel="manifest" href="manifest.json">
+    <style>
+        :root {
+            --primary-color: #1a1a1a;
+            --secondary-color: #ffd700;
+            --background: #fffde7;
+            --text-primary: #212121;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', 'Arial', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background: var(--background);
+            color: var(--text-primary);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            touch-action: manipulation;
+        }
+
+        /* »«ﬁÌ «·√‰„«ÿ ﬂ„« ÂÌ „⁄  ⁄œÌ·«  ··ÃÊ«· */
+    </style>
+</head>
+<body>
+    <!-- ‰›” «·ÂÌﬂ· «·”«»ﬁ -->
+
+    <!-- ≈÷«›… ‘«‘… «· Õ„Ì· -->
+    <div id="splash-screen">
+        <img src="icons/splash.png" alt="‘⁄«— «· ÿ»Ìﬁ">
+        <div class="loader"></div>
+    </div>
+
+    <script>
+        // „·› manifest.json ÷—Ê—Ì · ÿ»Ìﬁ PWA
+        const manifest = {
+            "name": "ﬂ«“Ì‰Ê »·Ì‰ﬂÊ",
+            "short_name": "»·Ì‰ﬂÊ",
+            "start_url": ".",
+            "display": "standalone",
+            "background_color": "#FFFDE7",
+            "theme_color": "#FFD700",
+            "icons": [
+                {
+                    "src": "icons/icon-72x72.png",
+                    "sizes": "72x72",
+                    "type": "image/png"
+                },
+                {
+                    "src": "icons/icon-96x96.png",
+                    "sizes": "96x96",
+                    "type": "image/png"
+                },
+                {
+                    "src": "icons/icon-128x128.png",
+                    "sizes": "128x128",
+                    "type": "image/png"
+                },
+                {
+                    "src": "icons/icon-144x144.png",
+                    "sizes": "144x144",
+                    "type": "image/png"
+                },
+                {
+                    "src": "icons/icon-152x152.png",
+                    "sizes": "152x152",
+                    "type": "image/png"
+                },
+                {
+                    "src": "icons/icon-192x192.png",
+                    "sizes": "192x192",
+                    "type": "image/png"
+                },
+                {
+                    "src": "icons/icon-384x384.png",
+                    "sizes": "384x384",
+                    "type": "image/png"
+                },
+                {
+                    "src": "icons/icon-512x512.png",
+                    "sizes": "512x512",
+                    "type": "image/png"
+                }
+            ]
+        };
+
+        //  ”ÃÌ· Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registered');
+                    })
+                    .catch(err => {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+
+        // »«ﬁÌ «·ﬂÊœ ﬂ„« ÂÊ
+    </script>
+</body>
+</html>

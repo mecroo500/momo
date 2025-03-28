@@ -1,0 +1,10 @@
+{
+    "name": "ίΗÒνδζ Θανδίζ",
+    "short_name": "Θανδίζ",
+    "start_url": "index.html",
+    "display": "standalone",
+    "background_color": "#FFFDE7",
+    "theme_color": "#FFD700",
+    "orientation": "portrait",
+    "icons": [...]
+}
